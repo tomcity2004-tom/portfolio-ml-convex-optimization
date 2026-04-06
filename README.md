@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ```Bash
 python main_pipeline.py
 ```
-###完整執行流程
+### 完整執行流程
 資料取得/載入 (src/data_loader.py)
 使用 yfinance 下載香港股市股票歷史價格資料（週頻率）
 清理 + 特徵工程 (src/preprocessing.py)
