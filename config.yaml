@@ -1,0 +1,26 @@
+# ==================== 專案主要設定檔 ====================
+# 本檔案集中管理所有參數，方便調整與重現
+
+data:
+  tickers: 
+    - "0700.HK"   # 騰訊控股
+    - "9988.HK"   # 阿里巴巴
+    - "0005.HK"   # 匯豐控股
+    - "1299.HK"   # 友邦保險
+    - "0388.HK"   # 香港交易所
+  start_date: "2018-01-01"
+  end_date: "2026-04-01"
+  freq: "1wk"          # 週頻率資料（適合投資組合研究）
+
+ml:
+  lookback_windows: 52     # 特徵計算的回顧期（週）
+  n_estimators: 100        # XGBoost 樹的數量
+  random_seed: 42          # 固定隨機種子，確保可重現
+
+optimization:
+  risk_aversion: 2.0       # 風險厭惡係數 (λ)，數值越大越保守
+  long_only: true          # 是否只允許多頭 (不做空)
+  transaction_cost_bps: 0  # 交易成本 (目前設為0，可之後加入)
+
+evaluation:
+  rebalance_freq: 4        # 每 4 週再平衡一次
