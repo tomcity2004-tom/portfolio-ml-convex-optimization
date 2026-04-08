@@ -106,9 +106,15 @@ def evaluate_and_save(returns, predictions, config):
     print("                  投資組合回測績效總結")
     print("="*60)
     print(metrics.round(3))
+    
+    # 安全取值，避免 KeyError
+    ml_sharpe = metrics.loc['Sharpe Ratio', metrics.columns[0]]   # 第一欄一定是 ML + Convex
+    eq_sharpe = metrics.loc['Sharpe Ratio', 'Equal Weight']
+    mv_sharpe = metrics.loc['Sharpe Ratio', 'Sample Mean-Variance']
+    
     print("\nSharpe Ratio 提升幅度：")
-    print(f"   ML+Convex vs Equal Weight : +{metrics.loc['Sharpe Ratio', 'ML + Convex Optimization'] - metrics.loc['Sharpe Ratio', 'Equal Weight']:.3f}")
-    print(f"   ML+Convex vs Sample MV    : +{metrics.loc['Sharpe Ratio', 'ML + Convex Optimization'] - metrics.loc['Sharpe Ratio', 'Sample Mean-Variance']:.3f}")
+    print(f"   ML+Convex vs Equal Weight : +{ml_sharpe - eq_sharpe:.3f}")
+    print(f"   ML+Convex vs Sample MV    : +{ml_sharpe - mv_sharpe:.3f}")
     
     print("\n📊 結果檔案已儲存：")
     print("   • results/performance/metrics.csv          → 完整績效表格")
