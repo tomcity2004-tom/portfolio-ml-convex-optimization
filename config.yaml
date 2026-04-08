@@ -3,24 +3,23 @@
 
 data:
   tickers: 
-    - "AAPL"    # 蘋果
-    - "MSFT"    # 微軟
-    - "GOOGL"   # Google (Alphabet)
-    - "AMZN"    # 亞馬遜
-    - "NVDA"    # 輝達
+    - "AAPL.US"
+    - "MSFT.US"
+    - "GOOGL.US"
+    - "AMZN.US"
+    - "NVDA.US"
   start_date: "2018-01-01"
   end_date: "2025-12-31"
-  freq: "1wk" # 週頻率資料（適合投資組合研究）
+  api_token: "69d5c2571155e5.43804905"   # 自己的 Key
 
 ml:
-  lookback_windows: 52     # 特徵計算的回顧期（週）
-  n_estimators: 100        # XGBoost 樹的數量
-  random_seed: 42          # 固定隨機種子，確保可重現
+  lookback_windows: 52
+  n_estimators: 100
+  random_seed: 42
 
 optimization:
-  risk_aversion: 2.0       # 風險厭惡係數 (λ)，數值越大越保守
-  long_only: true          # 是否只允許多頭 (不做空)
-  transaction_cost_bps: 0  # 交易成本 (目前設為0，可之後加入)
+  risk_aversion: 2.0
+  long_only: true
 
 evaluation:
-  rebalance_freq: 4        # 每 4 週再平衡一次
+  rebalance_freq: 4
