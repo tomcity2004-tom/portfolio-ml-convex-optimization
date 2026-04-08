@@ -11,6 +11,11 @@
 pip install -r requirements.txt
 ```
 
+### 2. 執行環境
+```bash
+python main_pipeline.py
+```
+
 ### 專案結構
 ```
 portfolio-ml-convex-optimization/
