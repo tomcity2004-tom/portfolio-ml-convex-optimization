@@ -19,17 +19,18 @@ python main_pipeline.py
 ### 專案結構
 ```
 portfolio-ml-convex-optimization/
-├── config.yaml
-├── requirements.txt
-├── README.md
-├── main_pipeline.py
-├── src/
-│   ├── data_loader.py
-│   ├── preprocessing.py
-│   ├── ml_model.py
-│   ├── convex_optimizer.py
-│   ├── evaluation.py
-│   └── utils.py
-├── results/          # 執行後自動產生
-└── data/             # 原始與處理後資料
+├── config.yaml                  # 集中管理所有參數
+├── requirements.txt             # 環境依賴套件與版本
+├── README.md                    # 專案說明與執行指南
+├── main_pipeline.py             # 單一入口主程式
+├── src/                         # 核心功能模組
+│   ├── data_loader.py           # 資料取得與載入
+│   ├── preprocessing.py         # 資料清理與特徵工程
+│   ├── ml_model.py              # XGBoost 預測模型
+│   ├── convex_optimizer.py      # 凸優化配置求解
+│   ├── evaluation.py            # 回測評估與績效指標
+│   └── utils.py                 # 共用工具函數（如固定隨機種子）
+├── results/                     # 執行後自動產生（不納入版本控制）
+│   └── performance/             # 指標表格、圖表、權重檔案
+└── .gitignore                   # 忽略暫存檔案與結果資料夾
 ```
